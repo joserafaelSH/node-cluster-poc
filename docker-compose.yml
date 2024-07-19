@@ -1,0 +1,13 @@
+services:
+  source:
+    container_name: poc-large-data-node-source
+    build:
+      context: .
+      dockerfile: Dockerfile
+    restart: always
+    environment:
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: postgres
+      POSTGRES_DB: logs-db
+    ports:
+      - 5432:5432
